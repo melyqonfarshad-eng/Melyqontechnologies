@@ -91,7 +91,7 @@ const OurProcess = () => {
         <div className="grid items-end gap-8 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <p className="reveal mb-5 text-xs font-semibold tracking-[3px] text-neutral-500">
-              07 <span className="mx-2 text-neutral-300">/</span> OUR PROCESS
+                OUR PROCESS
             </p>
             <h2 className="reveal text-4xl font-semibold leading-[1.02] tracking-[-0.055em] sm:text-6xl">
               From idea to launch,

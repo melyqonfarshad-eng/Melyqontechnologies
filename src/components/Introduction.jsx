@@ -1,68 +1,68 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from "react";
 
 // TODO: edit to match your real company story
 const statement =
-  'Melyqon is an independent digital studio. We blend software engineering, thoughtful design and emerging technology to turn ambitious ideas into products people love.'
+  "Melyqon is an independent digital studio. We blend software engineering, thoughtful design and emerging technology to turn ambitious ideas into products people love.";
 
 const pillars = [
   {
-    no: '01',
-    title: 'Our Mission',
-    text: 'To build reliable, beautiful software that helps businesses move faster and grow with confidence.',
+    no: "01",
+    title: "Our Mission",
+    text: "To build reliable, beautiful software that helps businesses move faster and grow with confidence.",
   },
   {
-    no: '02',
-    title: 'Our Vision',
-    text: 'A future where every company, big or small, has access to world-class digital products.',
+    no: "02",
+    title: "Our Vision",
+    text: "A future where every company, big or small, has access to world-class digital products.",
   },
   {
-    no: '03',
-    title: 'Our Approach',
-    text: 'Small senior team, clear communication, honest timelines. Quality first, always.',
+    no: "03",
+    title: "Our Approach",
+    text: "Small senior team, clear communication, honest timelines. Quality first, always.",
   },
-]
+];
 
-const words = statement.split(' ')
+const words = statement.split(" ");
 
 const Introduction = () => {
-  const textRef = useRef(null)
-  const litRef = useRef(0)
-  const [lit, setLit] = useState(0)
+  const textRef = useRef(null);
+  const litRef = useRef(0);
+  const [lit, setLit] = useState(0);
 
   // Light up words as the statement scrolls through the screen
   useEffect(() => {
-    let frame = 0
+    let frame = 0;
 
     const update = () => {
-      const el = textRef.current
-      if (!el) return
-      const rect = el.getBoundingClientRect()
-      const vh = window.innerHeight
-      const start = vh * 0.85
-      const end = vh * 0.3
+      const el = textRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const start = vh * 0.85;
+      const end = vh * 0.3;
       const p = Math.min(
         Math.max((start - rect.top) / (start - end + rect.height * 0.5), 0),
-        1
-      )
-      const next = Math.round(p * words.length)
+        1,
+      );
+      const next = Math.round(p * words.length);
       if (next !== litRef.current) {
-        litRef.current = next
-        setLit(next)
+        litRef.current = next;
+        setLit(next);
       }
-    }
+    };
 
     const onScroll = () => {
-      cancelAnimationFrame(frame)
-      frame = requestAnimationFrame(update)
-    }
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
 
-    update()
-    window.addEventListener('scroll', onScroll, { passive: true })
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
-      cancelAnimationFrame(frame)
-      window.removeEventListener('scroll', onScroll)
-    }
-  }, [])
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   return (
     <section
@@ -75,7 +75,7 @@ const Introduction = () => {
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <p className="reveal mb-8 text-xs font-semibold tracking-[3px] text-neutral-500">
-          03 <span className="mx-2 text-neutral-700">/</span> INTRODUCTION
+          INTRODUCTION
         </p>
 
         {/* Scroll-linked statement */}
@@ -87,10 +87,10 @@ const Introduction = () => {
             <span
               key={i}
               className={`transition-colors duration-300 ${
-                i < lit ? 'text-white' : 'text-neutral-700'
+                i < lit ? "text-white" : "text-neutral-700"
               }`}
             >
-              {w}{' '}
+              {w}{" "}
             </span>
           ))}
         </p>
@@ -109,13 +109,15 @@ const Introduction = () => {
               <h3 className="mt-14 text-2xl font-semibold tracking-[-0.03em]">
                 {p.title}
               </h3>
-              <p className="mt-3 text-sm leading-7 text-neutral-400">{p.text}</p>
+              <p className="mt-3 text-sm leading-7 text-neutral-400">
+                {p.text}
+              </p>
             </article>
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Introduction
+export default Introduction;

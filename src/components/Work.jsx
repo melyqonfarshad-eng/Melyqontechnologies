@@ -165,7 +165,7 @@ const Work = () => {
         <div className="relative z-10 mx-auto flex w-full max-w-7xl items-end justify-between gap-6 px-6 sm:px-10 lg:px-20">
           <div>
             <p className="mb-3 text-xs font-semibold tracking-[3px] text-neutral-500">
-              05 <span className="mx-2 text-neutral-300">/</span> SELECTED WORK
+              SELECTED WORK
             </p>
             <h2 className="text-3xl font-semibold leading-[1.02] tracking-[-0.05em] sm:text-5xl">
               Work that speaks

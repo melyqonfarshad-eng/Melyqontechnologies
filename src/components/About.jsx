@@ -53,7 +53,7 @@ const About = () => {
         <div className="grid items-end gap-10 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <p className="reveal mb-5 text-xs font-semibold tracking-[3px] text-neutral-500">
-              06 <span className="mx-2 text-neutral-700">/</span> ABOUT MELYQON
+              ABOUT MELYQON
             </p>
             <h2 className="reveal text-4xl font-semibold leading-[1.02] tracking-[-0.055em] sm:text-6xl lg:text-7xl">
               We build the

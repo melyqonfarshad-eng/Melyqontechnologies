@@ -87,7 +87,7 @@ const Contact = () => {
         {/* LEFT */}
         <div>
           <p className="reveal mb-5 text-xs font-semibold tracking-[3px] text-neutral-500">
-            08 <span className="mx-2 text-neutral-700">/</span> CONTACT
+           CONTACT
           </p>
 
           <h2 className="reveal text-5xl font-semibold leading-[0.98] tracking-[-0.06em] sm:text-7xl">
